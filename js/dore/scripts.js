@@ -97,7 +97,7 @@ function loadStyle(href, callback) {
 </div>
 `;
 
-  $("body").append(themeColorsDom);
+  //$("body").append(themeColorsDom);
 
 
   /* Default Theme Color, Border Radius and  Direction */
@@ -128,7 +128,7 @@ function loadStyle(href, callback) {
   $(".radius-radio[data-radius='" + radius + "']").attr("checked", true);
   $("#switchDark").attr("checked", theme.indexOf("dark") > 0 ? true : false);
 
-  loadStyle("css/" + theme, onStyleComplete);
+  loadStyle("css/dore/" + theme, onStyleComplete);
   function onStyleComplete() {
     setTimeout(onStyleCompleteDelayed, 300);
   }
