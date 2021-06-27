@@ -1,5 +1,14 @@
 var isLoading = false;
 
+var settings = {
+    method: 'GET',
+    sync: true
+}
+fetch('https://mycom-api.herokuapp.com', settings).then((response) => {
+    if (response.status === 404)
+        console.log('Herokuapp is up and running');
+});
+
 /*
     Créé un commentaire à partir d'un dictionnaire json au meme format que celui de l'API
 
