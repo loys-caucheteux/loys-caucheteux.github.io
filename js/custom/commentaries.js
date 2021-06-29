@@ -5,8 +5,10 @@ var settings = {
     sync: true
 }
 fetch('https://mycom-api.herokuapp.com', settings).then((response) => {
-    if (response.status === 404)
+    if (response.status === 404) {
         console.log('Herokuapp is up and running');
+        RequestCommentsFromHarverster();
+    }
 });
 
 /*
@@ -107,7 +109,6 @@ const RmComments = function (index) {
 
 $('form#FormComment').hide();
 $('img#LoaderGif').hide();
-RequestCommentsFromHarverster();
 
 $('textarea#tiny').tinymce({
     height: 300,
