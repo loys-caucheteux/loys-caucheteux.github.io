@@ -19,13 +19,12 @@ fetch('https://mycom-api.herokuapp.com', settings).then((response) => {
 */
 
 const GetHtmlCommentFromJson = function (comment) {
-    const ComDate = new Date(comment.created_at);
+    const ComDate = new Date(comment.created_at).toLocaleString('en-US',{weekday: 'short', day: 'numeric', year: 'numeric', month: 'long', hour: 'numeric', minute: 'numeric'});
     const newComment = 
     `<div id="comment${comment.id}" class="card mt-3 bg-white rounded-3 shadow">
     <div class="card-header">
         <h3 class="align-bottom mt-3">${comment.title}</h3>
-        <h5 class="text-muted">by ${comment.name} on the ${ComDate.toLocaleDateString()}
-        at ${ComDate.toLocaleTimeString()}</h5>
+        <h5 class="text-muted">by ${comment.name} on the ${ComDate}</h5>
     </div>
     <div class="bg-light">
         <div style="margin-left:2rem" class="text-muted">Comment :</div>
